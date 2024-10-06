@@ -1,0 +1,7 @@
+<div class="flex flex-row justify-center items-center">
+  <user-navbar/>
+</div>
+<div class="h-[90vh] flex flex-row justify-evenly items-center">
+  <nurse-card [jwtToken]="param" />
+  <doctor-card [jwtToken]="param" />
+</div>

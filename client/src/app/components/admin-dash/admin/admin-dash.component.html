@@ -1,0 +1,9 @@
+<div class="flex flex-row justify-center items-center">
+  <admin-navbar />
+</div>
+<div class="h-fit min-h-[90vh] flex flex-row justify-evenly items-center">
+  <create-admin-card [jwtToken]="param" />
+  <get-all-card [jwtToken]="param" />
+  <update-admin-card [jwtToken]="param" />
+  <delete-admin-card [jwtToken]="param" />
+</div>

@@ -1,0 +1,20 @@
+<hlm-alert-dialog>
+  <div class="flex flex-col justify-center items-center h-screen gap-5">
+    <input class="w-80 h-16" hlmInput placeholder='Username' name="username" [(ngModel)]="username" type='text' />
+    <input class="w-80 h-16" hlmInput placeholder='Password' name="password" [(ngModel)]="password" type='password' />
+    <button brnAlertDialogTrigger hlmBtn type="submit" (click)="onSubmit()" class="mt-10">Login</button>
+  </div>
+  <hlm-alert-dialog-content *brnAlertDialogContent='let ctx'>
+@if(gotError){
+      <hlm-alert-dialog-header>
+        <h3 hlmAlertDialogTitle>Entered wrong credentials</h3>
+        <p hlmAlertDialogDescription>
+          Please recheck and login once more
+        </p>
+      </hlm-alert-dialog-header>
+      <hlm-alert-dialog-footer>
+        <button hlmAlertDialogCancel (click)='ctx.close()'>Go back</button>
+      </hlm-alert-dialog-footer>
+  }
+  </hlm-alert-dialog-content>
+</hlm-alert-dialog>
