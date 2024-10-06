@@ -15,6 +15,7 @@ htmlReport/
 .springBeans
 .sts4-cache
 /docker_postgres_data/
+docker_postgres_data/
 
 ### IntelliJ IDEA ###
 .idea
