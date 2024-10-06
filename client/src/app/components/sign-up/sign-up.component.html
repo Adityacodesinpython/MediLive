@@ -1,0 +1,8 @@
+<div class="flex flex-col justify-center items-center h-[90vh] gap-5">
+  <input class="w-80 h-16" hlmInput placeholder='First name' name="firstname" [(ngModel)]="firstname" type='text' />
+  <input class="w-80 h-16" hlmInput placeholder='Last name' name="lastname" [(ngModel)]="lastname" type='text' />
+  <input class="w-80 h-16" hlmInput placeholder='Username' name="username" [(ngModel)]="username" type='text' />
+  <input class="w-80 h-16" hlmInput placeholder='Password' name="password" [(ngModel)]="password" type='password' />
+
+  <button hlmBtn type="submit" (click)="onSubmit()" class="mt-10">Sign-up</button>
+</div>

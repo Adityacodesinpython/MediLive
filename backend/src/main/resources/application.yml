@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev
+
+#logging:
+#  level:
+#    com:
+#      pharma_manager:
+#        MediLive: DEBUG   # print logs more severe than debug only

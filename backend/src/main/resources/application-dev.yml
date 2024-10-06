@@ -1,0 +1,19 @@
+server:
+  error:
+    include-message: always
+  port: 5000
+#  servlet:
+#    context-path: /MediLive
+
+spring:
+  application:
+    name: Medi-Live
+  datasource:
+    password: 5341
+    url: jdbc:postgresql://localhost:5432/MediLive
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+  main:
+    allow-circular-references: true
