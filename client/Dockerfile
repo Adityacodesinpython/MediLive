@@ -1,8 +1,9 @@
-FROM node:20.11.0-alpine
+FROM node:22.8.0-alpine
 
 WORKDIR /app
 
 COPY package*.json ./
+#COPY components ./
 
 RUN npm install
 
