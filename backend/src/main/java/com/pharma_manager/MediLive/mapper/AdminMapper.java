@@ -5,21 +5,23 @@ import com.pharma_manager.MediLive.entity.AdminEntity;
 
 public class AdminMapper {
     // static as object creation isn't required
-    public static AdminDto mapToAdminDto(AdminEntity userEntity) {
+    public static AdminDto mapToAdminDto(AdminEntity adminEntity) {
         return new AdminDto(
-                userEntity.getAdminId(),
-                userEntity.getUserName(),
-                userEntity.getPassWord(),
-                userEntity.getRoles()
+                adminEntity.getAdminId(),
+                adminEntity.getUserName(),
+                adminEntity.getPassWord(),
+                adminEntity.getRoles(),
+                adminEntity.getProfileImageId()
         );
     }
 
-    public static AdminEntity mapToAdminEntity(AdminDto userDto) {
+    public static AdminEntity mapToAdminEntity(AdminDto adminDto) {
         return new AdminEntity(
-                userDto.getAdminId(),
-                userDto.getUserName(),
-                userDto.getPassWord(),
-                userDto.getRoles()
+                adminDto.getAdminId(),
+                adminDto.getUserName(),
+                adminDto.getPassWord(),
+                adminDto.getRoles(),
+                adminDto.getProfileImageId()
         );
     }
 }

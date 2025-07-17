@@ -8,11 +8,13 @@ import com.pharma_manager.MediLive.service.AdminService;
 import com.pharma_manager.MediLive.service.DoctorService;
 import com.pharma_manager.MediLive.service.NurseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -87,6 +89,28 @@ public class AdminController {
         adminService.deleteByUserName(userName);
 
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PostMapping("/profile-picture")
+    public ResponseEntity<String> uploadProfilePicture(
+            @RequestParam("file") MultipartFile file
+    ) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String userName = authentication.getName();
+
+        adminService.uploadProfilePicture(userName, file);
+        return ResponseEntity.ok("Profile picture uploaded successfully for admin: " + userName);
+    }
+
+    // Get profile picture
+    @GetMapping(value = "/profile-picture", produces = MediaType.IMAGE_JPEG_VALUE)
+    public ResponseEntity<byte[]> getProfilePicture() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String userName = authentication.getName();
+
+        byte[] imageBytes = adminService.downloadProfilePicture(userName);
+        return new ResponseEntity<>(imageBytes, HttpStatus.OK);
     }
 
 }

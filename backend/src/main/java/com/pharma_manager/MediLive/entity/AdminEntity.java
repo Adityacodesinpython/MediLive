@@ -26,4 +26,7 @@ public class AdminEntity {
 
     @Column(name = "roles", columnDefinition = "TEXT[]")
     private String[] roles;
+
+    @Column(name = "profile_image_id", unique = true)
+    private String profileImageId;
 }

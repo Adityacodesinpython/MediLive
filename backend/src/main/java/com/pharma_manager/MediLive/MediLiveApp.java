@@ -8,5 +8,4 @@ public class MediLiveApp {
 	public static void main(String[] args) {
 		SpringApplication.run(MediLiveApp.class, args);
 	}
-
 }

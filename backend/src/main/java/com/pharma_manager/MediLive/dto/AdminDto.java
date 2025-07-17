@@ -17,4 +17,6 @@ public class AdminDto {
     private String passWord;
 
     private String[] roles;
+
+    private String profileImageId;
 }

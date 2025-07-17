@@ -13,7 +13,21 @@ spring:
     url: jdbc:postgresql://localhost:5432/MediLive
     username: postgres
   jpa:
+    show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
   main:
     allow-circular-references: true
+  redis:
+#    host: redis-14825.c305.ap-south-1-1.ec2.redns.redis-cloud.com
+#    port: 14825
+#    username: default
+#    password: lTKQ5QyxGqJcDgfhC93v22QsdYDbZCQd
+    host: localhost
+    port: 6379
+
+aws:
+  region: ap-southeast-2
+  s3:
+    buckets:
+      admin-bucket: medilives3
